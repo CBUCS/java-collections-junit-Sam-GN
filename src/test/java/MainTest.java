@@ -10,9 +10,11 @@ public class MainTest {
      Stack<Integer> myStack;
      LinkedList<Integer> myLinkedList;
      Queue<Integer> myQueue ;
+     Set<Integer> mySet;
+     HashMap<Integer,Integer> myMap;
 
 
-   //ArrayListTesting
+   //ArrayListTesting I did these before the constraint on the assignment
     @Test
     public void arrayListNotNull(){
         myList = new ArrayList<Integer>();
@@ -195,8 +197,145 @@ public class MainTest {
         Assertions.assertEquals((Integer)1,myQueue.remove());
     }
 
+    //SetTesting
+
+    @Test
+    public void setAdd(){
+        mySet = new HashSet<Integer>();
+        Assertions.assertTrue(mySet.add(1));
+    }
+    @Test
+    public void setClear(){
+        mySet = new HashSet<Integer>();
+        mySet.add(1);
+        mySet.add(2);
+        mySet.clear();
+        Assertions.assertEquals(0,mySet.size());
+    }
+    @Test
+    public void setContains(){
+        mySet = new HashSet<Integer>();
+        mySet.add(1);
+        Assertions.assertTrue(mySet.contains(1));
+    }
+    @Test
+    public void setContainsAll(){
+        mySet = new HashSet<Integer>();
+        mySet.add(1);
+        mySet.add(2);
+        myList = new ArrayList<Integer>();
+        myList.add(1);
+        myList.add(2);
+        Assertions.assertTrue(mySet.containsAll(myList));
+    }
+    @Test
+    public void setIsEmpty(){
+        mySet = new HashSet<Integer>();
+        Assertions.assertTrue(mySet.isEmpty());
+    }
+
+    @Test
+    public void seEquals(){
+        mySet = new HashSet<Integer>();
+        Set<Integer> mySet2 = new HashSet<Integer>();
+        mySet.add(1);
+        mySet2.add(1);
+        Assertions.assertTrue(mySet.equals(mySet2));
+    }
+    @Test
+    public void setRemove(){
+        mySet = new HashSet<Integer>();
+        mySet.add(1);
+        Assertions.assertTrue(mySet.remove(1));
+    }
+    @Test
+    public void setRetainsAll(){
+        mySet = new HashSet<Integer>();
+        Set<Integer> mySet2 = new HashSet<Integer>();
+        mySet.add(1);
+        mySet.add(2);
+        mySet2.add(1);
+        Assertions.assertTrue(mySet.retainAll(mySet2));
+    }
+    @Test
+    public void setSize(){
+        mySet = new HashSet<Integer>();
+        mySet.add(1);
+        Assertions.assertEquals(1,mySet.size());
+    }
+
+    //HashMapTesting
+
+    @Test
+    public void mapPut(){
+        myMap = new HashMap<Integer, Integer>();
+        Assertions.assertNull(myMap.put(0,1));
+    }
+    @Test
+    public void mapGet(){
+        myMap = new HashMap<Integer, Integer>();
+        myMap.put(0,1);
+        Assertions.assertEquals((Integer) 1,myMap.get(0));
+    }
+    @Test
+    public void mapSize(){
+        myMap = new HashMap<Integer, Integer>();
+        myMap.put(0,1);
+        Assertions.assertEquals(1,myMap.size());
+    }
+    @Test
+    public void mapClear(){
+        myMap = new HashMap<Integer, Integer>();
+        myMap.put(0,1);
+        myMap.clear();
+        Assertions.assertEquals(0,myMap.size());
+    }
+    @Test
+    public void mapContainsKey(){
+        myMap = new HashMap<Integer, Integer>();
+        myMap.put(0,1);
+        Assertions.assertTrue(myMap.containsKey(0));
+    }
+    @Test
+    public void mapContainsValue(){
+        myMap = new HashMap<Integer, Integer>();
+        myMap.put(0,1);
+        Assertions.assertTrue(myMap.containsValue(1));
+    }
+    @Test
+    public void mapRemove(){
+        myMap = new HashMap<Integer, Integer>();
+        myMap.put(0,1);
+        //@Since API error, Don't know what it was.
+        Assertions.assertTrue(myMap.remove(0,1));
+    }
+    @Test
+    public void mapIsEmpty(){
+        myMap = new HashMap<>();
+        Assertions.assertTrue(myMap.isEmpty());
+    }
+    @Test
+    public void mapReplace(){
+        myMap = new HashMap<>();
+        myMap.put(0,1);
+        Assertions.assertTrue(myMap.replace(0,1,2));
+    }
+    @Test
+    public void mapEquale(){
+        myMap = new HashMap<>();
+        myMap.put(0,1);
+        HashMap<Integer,Integer> myMap2 = new HashMap<>();
+        myMap2.put(0,1);
+        Assertions.assertTrue(myMap.equals(myMap2));
+    }
+    @Test
+    public void mapCompute(){
+        myMap = new HashMap<>();
+        myMap.put(0,1);
+        Assertions.assertEquals((Integer)2,myMap.compute(0,(k, v) -> v==null ? 1: ++v));
+    }
 }
-    //for later
+
 
 
 
