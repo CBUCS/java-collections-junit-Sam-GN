@@ -71,7 +71,7 @@ linkedListSort:
    sort list by natural order.
    test equal to 1 for myLinkedList.get(0)'s return.
    test equal to 2 for myLinkedList.get(1)'s return.
-   test equal to 3 for myLinkedList.get(2)'s return.
+   test equal to 3 for myLinkedList.get(2)'s return. 
 
 
 StackTesting........................................................................

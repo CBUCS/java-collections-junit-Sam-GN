@@ -367,7 +367,7 @@ public class MainTest {
         myMap.put(0,1);
         Assertions.assertEquals((Integer)2,myMap.compute(0,(k, v) -> v==null ? 1: ++v));
     }
-}
+}//
 
 
 
