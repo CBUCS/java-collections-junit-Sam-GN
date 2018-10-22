@@ -48,6 +48,31 @@ linkedListRetainAll:
    1,2 are added to myList.
    test true for myLinkedList.retainAll(myList)'s return.
 
+linkedLIstGet:
+   add 1 to list.
+   test equal to 1 for myLinkedList.get(0)'s return.
+
+linkedListIndexOf:
+   add 1 to list.
+   test equal to 0 for myLinkedList.indexOf(1)'s return
+
+linkedListLastIndexOf:
+   create new object.
+   test equal to -1 for myLinkedList.lastIndexOf(1)'s return.
+   add 1 to list.
+   test equal to 0 for myLinkedList.lastIndexOf(1)'s return.
+   add 1 to list.
+   test equal to 1 for myLinkedList.lastIndexOf(1)'s return.
+
+linkedListSort:
+   add 3 to list.
+   add 1 to list.
+   add 2 to list.
+   sort list by natural order.
+   test equal to 1 for myLinkedList.get(0)'s return.
+   test equal to 2 for myLinkedList.get(1)'s return.
+   test equal to 3 for myLinkedList.get(2)'s return.
+
 
 StackTesting........................................................................
 
