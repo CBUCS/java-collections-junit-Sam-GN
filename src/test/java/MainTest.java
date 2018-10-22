@@ -114,6 +114,39 @@ public class MainTest {
         myList.add(2);
         Assertions.assertTrue(myLinkedList.retainAll(myList));
     }
+    @Test
+    public void linkedLIstGet(){
+        myLinkedList = new LinkedList<Integer>();
+        myLinkedList.add(1);
+        Assertions.assertEquals((Integer)1,myLinkedList.get(0));
+    }
+    @Test
+    public void linkedListIndexOf(){
+        myLinkedList = new LinkedList<Integer>();
+        myLinkedList.add(1);
+        Assertions.assertEquals(0,myLinkedList.indexOf(1));
+    }
+
+    @Test
+    public void linkedListLastIndexOf(){
+        myLinkedList = new LinkedList<Integer>();
+        Assertions.assertEquals(-1,myLinkedList.lastIndexOf(1));
+        myLinkedList.add(1);
+        Assertions.assertEquals(0,myLinkedList.lastIndexOf(1));
+        myLinkedList.add(1);
+        Assertions.assertEquals(1,myLinkedList.lastIndexOf(1));
+    }
+    @Test
+    public void linkedListSort(){
+        myLinkedList = new LinkedList<Integer>();
+        myLinkedList.add(3);
+        myLinkedList.add(1);
+        myLinkedList.add(2);
+        myLinkedList.sort(Comparator.naturalOrder());
+        Assertions.assertEquals((Integer)1,myLinkedList.get(0));
+        Assertions.assertEquals((Integer)2,myLinkedList.get(1));
+        Assertions.assertEquals((Integer)3,myLinkedList.get(2));
+    }
 
     //StackTesting
     @Test
